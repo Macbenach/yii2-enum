@@ -117,6 +117,15 @@ use faryshta\widgets\EnumRadio;
 // with ActiveForm
 echo $form->field($person, 'gender')->widget(EnumDropdown::className());
 
+//Adding attributes for widget as styles, prompt options, etc.
+echo $form->field($person, 'gender')->widget(EnumDropdown::className(),
+        [
+            'options'=> [
+                    'prompt'=>'--Select any element--',
+                    'class'=>'form form-control'
+                ]
+        ]);
+
 // without ActiveForm and with model.
 echo EnumDropdown::widget([
     'model' => $person,
